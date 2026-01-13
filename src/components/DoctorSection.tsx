@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-import { Stethoscope, Eye, HeartHandshake, ClipboardList, Route, Users } from "lucide-react";
+import { ClipboardList, Route, Users } from "lucide-react";
+import doctorPhoto from "@/assets/brand/idv_perola_03.jpg";
 
 const badges = [
   "Mastologista",
@@ -35,21 +36,12 @@ export function DoctorSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image Placeholder */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-secondary to-accent/10 border border-border/50 overflow-hidden shadow-lg">
-              {/* Placeholder for doctor photo */}
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-accent/20 flex items-center justify-center mb-6">
-                    <Stethoscope className="w-16 h-16 text-accent" />
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    Foto: Dra. Joana Barros
-                  </p>
-                  <p className="text-xs text-muted-foreground/60 mt-2">
-                    (Adicionar em public/images/dra-joana.jpg)
-                  </p>
-                </div>
-              </div>
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src={doctorPhoto} 
+                alt="Dra. Joana Barros - Mastologista e Imaginologista Mamária"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
 
             {/* Decorative element */}
