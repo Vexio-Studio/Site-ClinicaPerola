@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { ClipboardList, Route, Users } from "lucide-react";
-import doctorPhoto from "@/assets/brand/idv_perola_03.jpg";
+import doctorPhoto from "@/assets/brand/idv_perola_18.jpg";
 
 const badges = [
   "Mastologista",
@@ -40,7 +40,7 @@ export function DoctorSection() {
               <img 
                 src={doctorPhoto} 
                 alt="Dra. Joana Barros - Mastologista e Imaginologista Mamária"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-left"
               />
             </div>
 
