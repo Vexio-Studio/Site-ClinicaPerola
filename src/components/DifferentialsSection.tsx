@@ -37,9 +37,9 @@ export function DifferentialsSection() {
               Prioridade para quem precisa
             </h2>
             <p className="font-body text-muted-foreground leading-relaxed mb-8">
-              Na PÉROLA, cada atendimento é pensado para oferecer o melhor cuidado possível. 
-              Nosso modelo de triagem orientativa permite identificar e priorizar casos que 
-              demandam atenção especial, garantindo que nenhuma paciente fique sem o suporte 
+              Na PÉROLA, cada atendimento é pensado para oferecer o melhor cuidado possível.
+              Nosso modelo de triagem orientativa permite identificar e priorizar casos que
+              demandam atenção especial, garantindo que nenhuma paciente fique sem o suporte
               adequado no momento certo.
             </p>
 
@@ -69,7 +69,7 @@ export function DifferentialsSection() {
                 Segurança clínica e respeito ao tempo da paciente.
               </h3>
               <p className="font-body text-muted-foreground leading-relaxed">
-                Nosso compromisso é garantir que cada mulher receba o cuidado que precisa, 
+                Nosso compromisso é garantir que cada mulher receba o cuidado que precisa,
                 no tempo certo, com a atenção que merece. Porque sua saúde não pode esperar.
               </p>
             </div>

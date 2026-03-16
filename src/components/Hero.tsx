@@ -18,12 +18,12 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center gradient-hero overflow-hidden"
     >
       {/* Decorative elements */}
-      <ShellDecoration className="absolute top-20 right-10 text-accent rotate-12 hidden md:block" />
+      <ShellDecoration className="absolute top-20 right-20 text-accent rotate-12 hidden md:block" />
       <ShellDecoration className="absolute bottom-32 left-10 text-accent -rotate-12 scale-75 hidden lg:block" />
-      
+
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-2/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-2/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container-narrow relative z-10 text-center pt-20 pb-16 md:pt-24 md:pb-20">
         <div className="max-w-4xl mx-auto">
@@ -69,7 +69,7 @@ export function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground">
+        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground">
           <span className="text-xs tracking-wider uppercase">Saiba mais</span>
           <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
             <div className="w-1.5 h-1.5 rounded-full bg-accent animate-bounce" />

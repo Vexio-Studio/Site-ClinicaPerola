@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CLINIC_CONFIG, WHATSAPP_MESSAGES } from "@/lib/config";
 import { openWhatsApp } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/brand/logo.png"
 
 const navLinks = [
   { href: "#clinica", label: "Clínica" },
@@ -20,7 +21,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -42,9 +43,9 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 py-2 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-sm border-b border-border"
+          ? "bg-card/70 backdrop-blur-md shadow-sm border-b border-border"
           : "bg-transparent"
       )}
     >
@@ -57,9 +58,9 @@ export function Header() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="font-display text-2xl md:text-3xl font-semibold tracking-wide text-accent hover:text-accent/80 transition-colors"
+            className="max-h-16 font-display text-2xl md:text-3xl font-semibold tracking-wide text-accent hover:text-accent/80 transition-colors"
           >
-            {CLINIC_CONFIG.name}
+            <img src={logo} className="flex items-center max-h-14" alt="" />
           </a>
 
           {/* Desktop Navigation */}
