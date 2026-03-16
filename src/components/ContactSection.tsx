@@ -25,8 +25,16 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Telefone",
-    value: CLINIC_CONFIG.phoneFormatted,
-    href: `tel:+${CLINIC_CONFIG.phone}`,
+    values: [
+      {
+        display: CLINIC_CONFIG.phoneFormatted,
+        href: `tel:+${CLINIC_CONFIG.phone}`,
+      },
+      {
+        display: CLINIC_CONFIG.phoneSecondaryFormatted,
+        href: `tel:+${CLINIC_CONFIG.phoneSecondary}`,
+      }
+    ],
     isExternal: false,
   },
   {
@@ -102,7 +110,19 @@ export function ContactSection() {
                     <method.icon className="w-6 h-6 text-accent" />
                   </div>
                   <h3 className="font-medium text-foreground mb-1">{method.title}</h3>
-                  {method.href ? (
+                  {method.values ? (
+                    <div className="flex flex-col gap-1">
+                      {method.values.map((val, idx) => (
+                        <a
+                          key={idx}
+                          href={val.href}
+                          className="text-sm text-primary hover:underline group-hover:text-accent transition-colors"
+                        >
+                          {val.display}
+                        </a>
+                      ))}
+                    </div>
+                  ) : method.href ? (
                     <a
                       href={method.href}
                       target={method.isExternal ? "_blank" : undefined}

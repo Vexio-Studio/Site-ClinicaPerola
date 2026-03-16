@@ -13,6 +13,8 @@ export const CLINIC_CONFIG = {
   whatsappFormatted: "(83) 99131-2919",
   phone: "558331857464",
   phoneFormatted: "(83) 3185-7464",
+  phoneSecondary: "558330213032",
+  phoneSecondaryFormatted: "(83) 3021-3032",
   instagram: "https://instagram.com/clinicaperola", // URL completa do Instagram
   email: "perolaclinicaeimagemdamama@gmail.com",
   
