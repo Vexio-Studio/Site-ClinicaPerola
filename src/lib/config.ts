@@ -6,20 +6,24 @@ export const CLINIC_CONFIG = {
   fullName: "PÉROLA – Clínica & Imagem da Mama",
   doctor: "Dra. Joana Barros",
   doctorTitle: "Mastologista e Imaginologista Mamária",
+  doctorRegistration: "CRM PB 4952 | RQE 4293 | RQE 10530",
   
   // Contatos - SUBSTITUIR pelos valores reais
-  whatsapp: "5500000000000", // Formato: 55 + DDD + número (sem espaços ou hífens)
+  whatsapp: "5583991312919", // Formato: 55 + DDD + número (sem espaços ou hífens)
+  whatsappFormatted: "(83) 99131-2919",
+  phone: "558331857464",
+  phoneFormatted: "(83) 3185-7464",
   instagram: "https://instagram.com/clinicaperola", // URL completa do Instagram
-  email: "contato@clinicaperola.com.br",
+  email: "perolaclinicaeimagemdamama@gmail.com",
   
   // Endereço - SUBSTITUIR pelo endereço real ou deixar vazio
   address: {
-    street: "",
-    neighborhood: "",
-    city: "",
-    state: "",
+    street: "Eco Business Center, 23° Andar, Salas 2307/2309",
+    neighborhood: "Miramar",
+    city: "João Pessoa",
+    state: "PB",
     zip: "",
-    full: "Em breve", // Exibido quando não há endereço
+    full: "Eco Business Center, 23° Andar, Salas 2307/2309 - Miramar, João Pessoa - PB", // Exibido quando não há endereço
   },
   
   // Horários

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
+import { MessageCircle, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,9 +18,16 @@ const contactMethods = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    value: "Enviar mensagem",
+    value: CLINIC_CONFIG.whatsappFormatted,
     href: buildWhatsAppLink(WHATSAPP_MESSAGES.informacoes),
     isExternal: true,
+  },
+  {
+    icon: Phone,
+    title: "Telefone",
+    value: CLINIC_CONFIG.phoneFormatted,
+    href: `tel:+${CLINIC_CONFIG.phone}`,
+    isExternal: false,
   },
   {
     icon: Instagram,
@@ -83,31 +90,58 @@ export function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Contact Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {contactMethods.map((method) => (
-              <div
-                key={method.title}
-                className="bg-card rounded-xl p-6 border border-border/50 hover:border-accent/30 transition-colors"
-              >
-                <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
-                  <method.icon className="w-6 h-6 text-accent" />
+          {/* Contact Methods and Map */}
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {contactMethods.filter(method => method.title !== 'Endereço').map((method) => (
+                <div
+                  key={method.title}
+                  className="bg-card rounded-xl p-6 border border-border/50 hover:border-accent/30 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
+                    <method.icon className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="font-medium text-foreground mb-1">{method.title}</h3>
+                  {method.href ? (
+                    <a
+                      href={method.href}
+                      target={method.isExternal ? "_blank" : undefined}
+                      rel={method.isExternal ? "noopener noreferrer" : undefined}
+                      className="text-sm text-primary hover:underline group-hover:text-accent transition-colors"
+                    >
+                      {method.value}
+                    </a>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">{method.value}</p>
+                  )}
                 </div>
-                <h3 className="font-medium text-foreground mb-1">{method.title}</h3>
-                {method.href ? (
-                  <a
-                    href={method.href}
-                    target={method.isExternal ? "_blank" : undefined}
-                    rel={method.isExternal ? "noopener noreferrer" : undefined}
-                    className="text-sm text-primary hover:underline"
-                  >
-                    {method.value}
-                  </a>
-                ) : (
-                  <p className="text-sm text-muted-foreground">{method.value}</p>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
+            
+            {/* Map Card */}
+            <div className="bg-card rounded-xl p-6 border border-border/50 hover:border-accent/30 transition-colors">
+               <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center shrink-0">
+                    <MapPin className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-foreground mb-1">Endereço</h3>
+                    <p className="text-sm text-muted-foreground">{CLINIC_CONFIG.address.full}</p>
+                  </div>
+               </div>
+               <div className="w-full h-48 rounded-lg overflow-hidden border border-border/50">
+                 <iframe 
+                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.9482811370258!2d-34.8471449!3d-7.1319202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace81b1bcaec23%3A0xcad46facc6330c6a!2sEco%20Business%20Center!5e0!3m2!1spt-BR!2sbr!4v1710600000000!5m2!1spt-BR!2sbr" 
+                   width="100%" 
+                   height="100%" 
+                   style={{ border: 0 }} 
+                   allowFullScreen={false} 
+                   loading="lazy" 
+                   referrerPolicy="no-referrer-when-downgrade"
+                   title="Localização da Clínica Pérola"
+                 ></iframe>
+               </div>
+            </div>
           </div>
 
           {/* Contact Form */}

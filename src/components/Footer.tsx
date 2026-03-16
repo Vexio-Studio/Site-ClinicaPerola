@@ -7,9 +7,9 @@ export function Footer() {
   return (
     <footer className="bg-foreground text-background py-12 md:py-16">
       <div className="container-wide">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Brand */}
-          <div>
+          <div className="md:col-span-1">
             <h3 className="font-display text-2xl font-semibold text-background mb-2">
               {CLINIC_CONFIG.name}
             </h3>
@@ -18,6 +18,9 @@ export function Footer() {
             </p>
             <p className="text-background/70 text-sm">
               {CLINIC_CONFIG.doctor}
+            </p>
+            <p className="text-background/50 text-xs mt-1">
+              {CLINIC_CONFIG.doctorRegistration}
             </p>
           </div>
 
@@ -30,6 +33,19 @@ export function Footer() {
             <p className="text-background/70 text-sm">
               {CLINIC_CONFIG.hours.saturday}
             </p>
+          </div>
+
+          {/* Contato */}
+          <div>
+            <h4 className="font-medium text-background mb-4">Contato</h4>
+            <div className="space-y-2">
+              <a href={`https://wa.me/${CLINIC_CONFIG.whatsapp}`} target="_blank" rel="noopener noreferrer" className="block text-background/70 text-sm hover:text-background transition-colors">
+                WhatsApp: {CLINIC_CONFIG.whatsappFormatted}
+              </a>
+              <a href={`tel:+${CLINIC_CONFIG.phone}`} className="block text-background/70 text-sm hover:text-background transition-colors">
+                Fixo: {CLINIC_CONFIG.phoneFormatted}
+              </a>
+            </div>
           </div>
 
           {/* Links */}

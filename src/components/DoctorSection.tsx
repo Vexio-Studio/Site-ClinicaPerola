@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { ClipboardList, Route, Users } from "lucide-react";
 import doctorPhoto from "@/assets/brand/idv_perola_18.jpg";
+import { CLINIC_CONFIG } from "@/lib/config";
 
 const badges = [
   "Mastologista",
@@ -53,9 +54,12 @@ export function DoctorSection() {
             <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4">
               Quem Cuida de Você
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-2">
               Dra. Joana Barros
             </h2>
+            <p className="text-sm font-medium text-muted-foreground mb-4">
+              {CLINIC_CONFIG.doctorRegistration}
+            </p>
 
             {/* Badges */}
             <div className="flex flex-wrap gap-2 mb-6">
