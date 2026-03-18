@@ -79,7 +79,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="text-background/40 text-xs text-center">
-            © {currentYear} {CLINIC_CONFIG.fullName}. Todos os direitos reservados.
+            © {currentYear} {CLINIC_CONFIG.legalName}. Todos os direitos reservados.
           </p>
         </div>
       </div>

@@ -4,6 +4,7 @@
 export const CLINIC_CONFIG = {
   name: "PÉROLA",
   fullName: "PÉROLA – Clínica & Imagem da Mama",
+  legalName: "LIVRE CENTRO DE ATENCAO A MAMA LTDA",
   doctor: "Dra. Joana Barros",
   doctorTitle: "Mastologista e Imaginologista Mamária",
   doctorRegistration: "CRM PB 4952 | RQE 4293 | RQE 10530",

@@ -149,13 +149,13 @@ export function ContactSection() {
                     <p className="text-sm text-muted-foreground">{CLINIC_CONFIG.address.full}</p>
                   </div>
                </div>
-               <div className="w-full h-48 rounded-lg overflow-hidden border border-border/50">
+               <div className="w-full h-48 sm:h-64 lg:h-72 rounded-lg overflow-hidden border border-border/50">
                  <iframe 
                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.9482811370258!2d-34.8471449!3d-7.1319202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace81b1bcaec23%3A0xcad46facc6330c6a!2sEco%20Business%20Center!5e0!3m2!1spt-BR!2sbr!4v1710600000000!5m2!1spt-BR!2sbr" 
                    width="100%" 
                    height="100%" 
                    style={{ border: 0 }} 
-                   allowFullScreen={false} 
+                   allowFullScreen={true} 
                    loading="lazy" 
                    referrerPolicy="no-referrer-when-downgrade"
                    title="Localização da Clínica Pérola"
@@ -231,6 +231,9 @@ export function ContactSection() {
                 política de privacidade
               </Link>
               .
+            </p>
+            <p className="text-[10px] text-muted-foreground/60 mt-2 text-center">
+              {CLINIC_CONFIG.legalName}
             </p>
           </div>
         </div>
